@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Nyro</title>
+<style>
+  :root { --bg:#0f1115; --card:#161922; --txt:#e6e9ef; --muted:#9aa3b2; --acc:#3dd7c4; --bd:#262b36; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width:820px; margin:0 auto; padding:48px 22px 80px; }
+  h1 { font-size:30px; margin:0 0 4px; }
+  h2 { font-size:21px; margin:38px 0 10px; padding-top:10px; border-top:1px solid var(--bd); }
+  h3 { font-size:17px; margin:22px 0 6px; color:var(--acc); }
+  p, li { color:var(--txt); }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 8px; }
+  a { color:var(--acc); }
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:14px; display:block; overflow-x:auto; }
+  th, td { border:1px solid var(--bd); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--card); }
+  code { background:var(--card); padding:1px 6px; border-radius:5px; font-size:13px; }
+  .note { background:var(--card); border:1px solid var(--bd); border-left:3px solid var(--acc);
+          padding:10px 14px; border-radius:8px; margin:14px 0; color:var(--muted); font-size:14px; }
+  hr { border:none; border-top:1px solid var(--bd); margin:30px 0; }
+  footer { color:var(--muted); font-size:13px; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Privacy Policy</h1>
+<p class="meta"><strong>Nyro</strong> · Effective Date: June 2, 2026 · Last Updated: June 2, 2026</p>
+
+<h2>1. Introduction</h2>
+<p>Nyro ("we," "our," or "us") respects your privacy and is committed to protecting your business data. This Privacy Policy explains how we collect, use, share, store, and protect information when you use the Nyro mobile applications (including <strong>Nyro Facturación</strong>), web dashboard (app.nyropr.com), or related services (collectively, "Services").</p>
+<p>By using the Services, you agree to the practices described in this Privacy Policy.</p>
+
+<h2>2. Information We Collect</h2>
+
+<h3>2.1 Account Information</h3>
+<ul>
+<li>Email address</li>
+<li>Display name</li>
+<li>Password (hashed — we never store plaintext passwords)</li>
+<li>Workspace identifier</li>
+<li>Authentication tokens (stored in iOS Keychain / Android Keystore on your device)</li>
+<li>MFA/TOTP enrollment status (we do not store TOTP secrets after setup)</li>
+</ul>
+
+<h3>2.2 Invoicing &amp; Expense Data (Nyro Facturación)</h3>
+<p>When you use Nyro Facturación, we store the business records you create:</p>
+<ul>
+<li>Products, expenses ("gastos"), amounts, payment method and beneficiary/dealer information</li>
+<li>Approval and payment status, payment timestamps</li>
+<li>Images you upload as supporting evidence (dealer wire-info images and payment receipts/"comprobantes")</li>
+</ul>
+
+<h3>2.3 Business Data (via Odoo ERP)</h3>
+<p>If your workspace connects an Odoo ERP instance (e.g. for inventory recommendations), Nyro reads sales, inventory, accounts-receivable, operations, and CRM data in real time. <strong>Nyro does not permanently store your Odoo business data</strong> — it is fetched per request and used transiently for processing, except for explicitly saved AI briefings.</p>
+
+<h3>2.4 Marketing Platform Data (OAuth Integrations)</h3>
+<p>If you connect marketing or commerce platforms (Meta, Google, TikTok, LinkedIn, Stripe Connect, Shopify, Mercado Libre, Clover, Mailchimp, Klaviyo), we access their insights/metrics. OAuth access tokens are encrypted using Fernet symmetric encryption (AES-128-CBC) and stored in Supabase.</p>
+
+<h3>2.5 Device and Technical Information</h3>
+<ul>
+<li>Device type and operating system (iOS/Android)</li>
+<li>App version</li>
+<li>Push notification token (FCM) if you opt in to notifications</li>
+<li>IP address (used for rate limiting and security monitoring)</li>
+<li>Crash reports and error logs (via Sentry — see Section 4)</li>
+</ul>
+
+<h3>2.6 Information We Do NOT Collect</h3>
+<ul>
+<li>Payment card numbers (handled by Stripe — we do not see raw card data)</li>
+<li>Government ID or social security numbers</li>
+<li>Health or biometric data</li>
+<li>Precise GPS location</li>
+<li>Microphone data or contact-book data</li>
+</ul>
+
+<h2>3. How We Use Your Information</h2>
+<table>
+<tr><th>Purpose</th><th>Data Used</th><th>Legal Basis</th></tr>
+<tr><td>Provide the Services</td><td>Account info, invoicing/expense data, business data, OAuth tokens</td><td>Contract performance</td></tr>
+<tr><td>Generate AI analyses and briefings</td><td>Odoo data, chat messages</td><td>Contract performance</td></tr>
+<tr><td>Authenticate users</td><td>Account credentials, JWT tokens</td><td>Contract / Legitimate interest</td></tr>
+<tr><td>Send push notifications</td><td>FCM token, workspace ID</td><td>Consent</td></tr>
+<tr><td>Detect and prevent fraud/abuse</td><td>IP address, request patterns</td><td>Legitimate interest</td></tr>
+<tr><td>Error monitoring and debugging</td><td>Crash reports, error logs (via Sentry)</td><td>Legitimate interest</td></tr>
+<tr><td>Comply with legal obligations</td><td>As required</td><td>Legal obligation</td></tr>
+</table>
+<p><strong>We do not sell your personal data or business data to third parties.</strong></p>
+<p><strong>We do not use your business data to train AI models.</strong> Data sent to Anthropic (Claude API) is processed under Anthropic's API terms, which prohibit using API data for model training by default.</p>
+
+<h2>4. Third-Party Service Providers</h2>
+<table>
+<tr><th>Service</th><th>Provider</th><th>Purpose</th><th>Data Shared</th></tr>
+<tr><td>Supabase</td><td>Supabase Inc. (AWS)</td><td>Auth, database, storage, token storage</td><td>Account info, invoicing data, uploaded images, OAuth tokens</td></tr>
+<tr><td>Anthropic API</td><td>Anthropic, PBC</td><td>AI language model inference</td><td>Business data summaries, chat messages</td></tr>
+<tr><td>Sentry</td><td>Functional Software, Inc.</td><td>Error monitoring</td><td>Error logs, stack traces (no PII by config)</td></tr>
+<tr><td>Firebase FCM</td><td>Google LLC</td><td>Push notifications</td><td>FCM device tokens</td></tr>
+<tr><td>Odoo (your instance)</td><td>Your Odoo provider</td><td>ERP data source</td><td>We read data; Odoo is your own system</td></tr>
+</table>
+<p>We configure Sentry with <code>send_default_pii=False</code>, so personal identifiers are not included in error reports by default. Please review <a href="https://www.anthropic.com/privacy">Anthropic's privacy policy</a> for details on how they handle API data.</p>
+
+<h2>5. Data Storage and Security</h2>
+<h3>5.1 Storage Locations</h3>
+<ul>
+<li><strong>Supabase (database &amp; storage):</strong> Account data, invoicing records, uploaded images, and encrypted OAuth tokens are stored in Supabase-managed PostgreSQL and Storage, hosted on AWS.</li>
+<li><strong>Device (iOS/Android):</strong> Session tokens (JWT) are stored in iOS Keychain or Android Keystore — not in plaintext.</li>
+<li><strong>Backend (in-memory only):</strong> Certain AI responses are cached in memory for up to 30–60 minutes to reduce API costs, then discarded.</li>
+</ul>
+<h3>5.2 Security Measures</h3>
+<ul>
+<li>HTTPS/TLS in transit</li>
+<li>AES encryption for stored OAuth tokens</li>
+<li>JWT authentication with JWKS verification</li>
+<li>Row-Level Security (RLS) on the database</li>
+<li>MFA/TOTP support</li>
+<li>Input sanitization and rate limiting</li>
+</ul>
+
+<h2>6. Data Retention</h2>
+<table>
+<tr><th>Data Type</th><th>Retention Period</th></tr>
+<tr><td>Account information</td><td>Until account deletion + 30 days</td></tr>
+<tr><td>Invoicing / expense records &amp; uploaded images</td><td>Until deleted by you or account deletion</td></tr>
+<tr><td>Encrypted OAuth tokens</td><td>Until the integration is disconnected</td></tr>
+<tr><td>Push tokens</td><td>Until updated or account deletion</td></tr>
+<tr><td>Sentry error logs</td><td>Per Sentry's default retention (90 days)</td></tr>
+<tr><td>Odoo/marketing data fetched transiently</td><td>Not persisted beyond the request</td></tr>
+</table>
+
+<h2>7. Cookies and Local Storage</h2>
+<p>The Nyro mobile applications do not use browser cookies. They use iOS Keychain / Android Keystore for secure session tokens, encrypted shared preferences for non-sensitive settings, and in-memory cache for transient results. The web dashboard (app.nyropr.com) may use session cookies for authentication and local storage for UI preferences.</p>
+
+<h2>8. Data Sharing</h2>
+<p>We do not sell, rent, or trade your data. We share data only: with the service providers listed in Section 4 under data processing agreements; with connected platforms you explicitly authorize via OAuth; with law enforcement if legally required or to prevent imminent harm; and in a business transfer subject to equivalent privacy protections.</p>
+
+<h2>9. Your Rights</h2>
+<h3>9.1 GDPR (EU/EEA users)</h3>
+<p>Right of access, rectification, erasure ("right to be forgotten"), portability, objection, restriction of processing, and withdrawal of consent.</p>
+<h3>9.2 CCPA/CPRA (California residents)</h3>
+<p>Right to know, delete, correct, opt-out of sale (we do not sell personal information), and non-discrimination.</p>
+<h3>9.3 How to Exercise Your Rights</h3>
+<p>Contact us at <a href="mailto:privacy@nyropr.com">privacy@nyropr.com</a>. We respond within 30 days for standard requests (45 days for complex requests, with notice). You may also <strong>delete your account directly from the Settings screen in the app</strong>, which initiates data deletion per our Data Deletion Policy.</p>
+
+<h2>10. Business Data — Special Considerations</h2>
+<p>Nyro processes commercially sensitive business data (sales, inventory, financials, invoicing). We treat this data as confidential and will not use it for any purpose other than providing the Services to you. If your data includes employee or customer PII, you are responsible for ensuring your use of Nyro complies with your own obligations under applicable law.</p>
+
+<h2>11. International Data Transfers</h2>
+<p>Your data is stored in cloud infrastructure operated by Supabase (AWS) and may be processed by Anthropic's API infrastructure, which may involve transfers outside your country of residence. Where required, such transfers are governed by appropriate safeguards (e.g. Standard Contractual Clauses).</p>
+
+<h2>12. Children's Privacy</h2>
+<p>The Services are intended for business owners aged 18 and older. We do not knowingly collect personal information from individuals under 18 and will delete such data promptly if discovered.</p>
+
+<h2>13. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Material changes will be communicated via in-app notification or email at least 14 days before taking effect. Continued use after the effective date constitutes acceptance of the updated policy.</p>
+
+<h2>14. Contact Us</h2>
+<p><strong>Privacy Contact:</strong> <a href="mailto:privacy@nyropr.com">privacy@nyropr.com</a><br>
+<strong>Website:</strong> <a href="https://nyropr.com">nyropr.com</a></p>
+
+<hr>
+<footer>This Privacy Policy was last updated on June 2, 2026. · © 2026 Nyro Inc.</footer>
+
+</div>
+</body>
+</html>
